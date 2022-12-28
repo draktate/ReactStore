@@ -4,19 +4,10 @@ import {Link} from 'react-router-dom';
 import {ButtonContainer} from './StyledComponents';
 import { detailProduct } from '../data';
 
-const test1="Testing";
 
 export default class Details extends Component 
 {
 
-  componentDidMount() {
-    console.log('I was triggered during componentDidMount inside Details');
-  }
-
-  componentDidUpdate(){
-    console.log('I was triggered during componentDidUpdate inside Details');
-
-  }
 
   render(){
     return (

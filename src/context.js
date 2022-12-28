@@ -60,7 +60,7 @@ class ProductProvider extends Component
     const selectedProduct = tempCart.find(item=>item.id===id);
     const index = tempCart.indexOf(selectedProduct);
     const product = tempCart[index];
-    if(product.count==1)
+    if(product.count===1)
     {
       this.removeItem(id);
     }
@@ -80,7 +80,7 @@ class ProductProvider extends Component
 
     let tempProducts = [...this.state.products];
     let tempCart=[...this.state.cart];
-    tempCart=tempCart.filter(item=> item.id != id);
+    tempCart=tempCart.filter(item=> item.id !== id);
     const index = tempProducts.indexOf(this.getItem(id));
     let removedProduct=tempProducts[index]; 
     removedProduct.inCart=false;
@@ -107,7 +107,7 @@ class ProductProvider extends Component
 
   addTotals=()=>{
     let subTotal=0;
-    this.state.cart.map(item=>{ subTotal += item.total});
+    this.state.cart.map(item=>{ subTotal += item.total;} );
     const tempTax = subTotal * 0.1;
     const tax= parseFloat(tempTax.toFixed(2));
     const total = subTotal + tax;
@@ -174,9 +174,7 @@ class ProductProvider extends Component
         clearCart:this.clearCart
 
           }}>
-        <div> children </div>
           {this.props.children}
-        <div> children ends</div>
       </ProductContext.Provider>
     );
   }
