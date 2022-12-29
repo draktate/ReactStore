@@ -1,3 +1,4 @@
 {
-    "main":"Cart.js"
+    "main":"Cart.js",
+    "homepage": "https://draktate.github.io/ReactStore"
 }
